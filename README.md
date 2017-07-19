@@ -8,11 +8,11 @@
 
 - Các màn hình chức năng
 
-    + Màn hình Login
+    + <b>Màn hình Login</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/login.PNG)
     
-    + Màn hình Resigter
+    + <b>Màn hình Resigter</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/register.PNG)
     
@@ -20,18 +20,18 @@
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/updateprofile.PNG)
     
-    + Màn hình Change Password
+    + <b>Màn hình Change Password</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/changepassword.PNG)
     
-    + Màn hình Chat Realtime
+    + <b>Màn hình Chat Realtime</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/chat.PNG)
     
-    + Event Chat
+    + <b>Event Chat</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/eventchat.PNG)
     
-    + Màn hình Chat Simsimi
+    + <b>Màn hình Chat Simsimi</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/simsimi.PNG)
