@@ -1,79 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/login_background"
     tools:context="nnthien.com.myapp.SignupActivity">
+
+    <ImageView
+        android:id="@+id/image_signup"
+        android:src="@drawable/pro"
+        android:layout_centerHorizontal="true"
+        android:layout_height="150dp"
+        android:layout_width="wrap_content"/>
+
     <LinearLayout
-        android:id="@+id/group_login"
+        android:id="@+id/group_signup"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_below="@+id/image_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Register"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="10dp"/>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/signup_editfullname"
-                android:hint="Enter your fullname"
-                android:padding="5dp"
+                android:hint="Fullname"
+                android:background="#804E4467"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:padding="7dp"
+                android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
+                android:drawablePadding="16dp"
+                android:drawableTint="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/signup_editLogin"
-                android:hint="Enter your username"
-                android:padding="5dp"
+                android:hint="Username"
+                android:background="#804E4467"
+                android:layout_marginTop="7dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:padding="7dp"
+                android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+                android:drawablePadding="16dp"
+                android:drawableTint="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/signup_editPassword"
-                android:hint="Enter your password"
                 android:inputType="textPassword"
-                android:padding="5dp"
+                android:hint="Password"
+                android:layout_marginTop="7dp"
+                android:background="#804E4467"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:padding="7dp"
+                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawablePadding="16dp"
+                android:drawableTint="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:weightSum="2"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/signup_editemail"
+            android:hint="Email"
+            android:layout_marginTop="7dp"
+            android:background="#804E4467"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:padding="7dp"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:drawablePadding="16dp"
+            android:inputType="textEmailAddress"
+            android:drawableTint="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/signup_editphone"
+            android:hint="Phone"
+            android:layout_marginTop="7dp"
+            android:background="#804E4467"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:padding="7dp"
+            android:inputType="number"
+            android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
+            android:drawablePadding="16dp"
+            android:drawableTint="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
-            android:layout_weight="1"
             android:id="@+id/signup_btnSignup"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:text="Signup"
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
+            android:background="#C0F62E69"
+            android:text="Sign up"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
         <Button
-            android:layout_weight="1"
-            android:id="@+id/signup_btnCancel"
-            android:background="#01579B"
-            android:textColor="@color/colorAccent"
-            android:text="Cancel"
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
+            android:id="@+id/signup_btnLogin"
+            android:background="#C0A0C0CA"
+            android:text="Login"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Borderless"/>
-
     </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

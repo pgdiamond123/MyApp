@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nnthien.com.myapp.SimsimiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageButton
+            android:id="@+id/simsimi_emoji_button"
+            android:background="@null"
+            android:src="@drawable/ic_smiley"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:padding="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+
+        <ImageButton
+            android:id="@+id/simsimi_send_button"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_send"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+
+        <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
+            android:id="@+id/simsimi_edt_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/simsimi_emoji_button"
+            android:layout_toLeftOf="@+id/simsimi_send_button"
+            android:hint="Enter your message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ListView
+            android:stackFromBottom="true"
+            android:id="@+id/simsimi_list_of_message"
+            android:layout_above="@+id/simsimi_edt_content"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </RelativeLayout>
+
+
+</FrameLayout>

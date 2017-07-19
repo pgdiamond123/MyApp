@@ -1,5 +1,6 @@
 package nnthien.com.myapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +18,8 @@ import com.quickblox.users.model.QBUser;
 
 public class SignupActivity extends AppCompatActivity {
 
-    Button btnSignup,btnCancel;
-    EditText edtUser,edtPassword,edtFullname;
+    Button btnSignup,btnLogin;
+    EditText edtUser,edtPassword,edtFullname,edtEmail,edtPhone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +27,19 @@ public class SignupActivity extends AppCompatActivity {
 
         registerSession();
 
-        btnCancel = (Button)findViewById(R.id.signup_btnCancel);
+        btnLogin = (Button)findViewById(R.id.signup_btnLogin);
         btnSignup = (Button)findViewById(R.id.signup_btnSignup);
         edtUser = (EditText)findViewById(R.id.signup_editLogin);
         edtPassword = (EditText) findViewById(R.id.signup_editPassword);
         edtFullname = (EditText) findViewById(R.id.signup_editfullname);
-        btnCancel.setOnClickListener(new View.OnClickListener(){
+        edtEmail = (EditText)findViewById(R.id.signup_editemail);
+        edtPhone = (EditText)findViewById(R.id.signup_editphone);
+
+        btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -44,10 +50,17 @@ public class SignupActivity extends AppCompatActivity {
                 String password = edtPassword.getText().toString();
                 QBUser qbUser = new QBUser(user,password);
                 qbUser.setFullName(edtFullname.getText().toString());
+                qbUser.setEmail(edtEmail.getText().toString());
+                qbUser.setPhone(edtPhone.getText().toString());
                 QBUsers.signUp(qbUser).performAsync(new QBEntityCallback<QBUser>() {
                     @Override
                     public void onSuccess(QBUser qbUser, Bundle bundle) {
                         Toast.makeText(getBaseContext(),"Signup successfully",Toast.LENGTH_SHORT).show();
+                        edtUser.setText("");
+                        edtEmail.setText("");
+                        edtPhone.setText("");
+                        edtPassword.setText("");
+                        edtFullname.setText("");
                     }
 
                     @Override

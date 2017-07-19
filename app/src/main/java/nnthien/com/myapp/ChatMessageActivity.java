@@ -84,6 +84,7 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
     EmojIconActions emojIconActions;
     EmojiconEditText edtContent;
 
+
     RelativeLayout activity_main;
 
     Toolbar toolbar;
@@ -259,6 +260,16 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
         initChatDialogs();
 
         retrieveMessage();
+
+        ColorGenerator generator = ColorGenerator.MATERIAL;
+        int randomColor = generator.getRandomColor();
+
+        TextDrawable.IBuilder builder = TextDrawable.builder().beginConfig().withBorder(4).endConfig().round();
+
+        //GET TEXT ImageView
+        TextDrawable drawable = builder.build(qbChatDialog.getName().substring(0, 1).toUpperCase(), randomColor);
+
+        dialog_avatar.setImageDrawable(drawable);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -439,6 +450,8 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
         emojiButton = (ImageButton)findViewById(R.id.emoji_button);
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
         edtContent = (EmojiconEditText)findViewById(R.id.edt_content);
+        dialog_avatar = (ImageView)findViewById(R.id.dialog_avatar);
+
         emojIconActions = new EmojIconActions(getApplicationContext(),activity_main,emojiButton,edtContent);
         emojIconActions.ShowEmojicon();
         edtContent.addTextChangedListener(new TextWatcher() {

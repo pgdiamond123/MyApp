@@ -5,8 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.github.library.bubbleview.BubbleTextView;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.model.QBChatMessage;
@@ -45,6 +48,8 @@ public class ChatMessageAdapter extends BaseAdapter {
         return position;
     }
 
+    private ColorGenerator generator = ColorGenerator.MATERIAL;
+    private int randomColor = generator.getRandomColor();
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
@@ -60,6 +65,14 @@ public class ChatMessageAdapter extends BaseAdapter {
                 BubbleTextView bubbleTextView = (BubbleTextView)view.findViewById(R.id.message_content);
                 bubbleTextView.setText(qbChatMessages.get(position).getBody());
                 TextView txtName = (TextView)view.findViewById(R.id.message_user);
+                ImageView user_avatar = (ImageView)view.findViewById(R.id.simsimi_image);
+
+                TextDrawable.IBuilder builder = TextDrawable.builder().beginConfig().withBorder(4).endConfig().round();
+
+                //GET TEXT ImageView
+                TextDrawable drawable = builder.build(QBUsersHolder.getInstance().getUserById(qbChatMessages.get(position).getSenderId()).getFullName().toString().substring(0, 1).toUpperCase(), randomColor);
+
+                user_avatar.setImageDrawable(drawable);
                 txtName.setText(QBUsersHolder.getInstance().getUserById(qbChatMessages.get(position).getSenderId()).getFullName());
             }
         }
