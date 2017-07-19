@@ -16,7 +16,7 @@
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/register.PNG)
     
-    + Màn hình Update User Profile
+    + <b>Màn hình Update User Profile</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/updateprofile.PNG)
     
