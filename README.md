@@ -50,12 +50,15 @@
     
     
     
-    + <b>Màn hình Chat Realtime</b>
+    + <b>Màn hình Chat Private Realtime</b>
     
     ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/chat.PNG)
     
     
     
+    + <b>Màn hình Chat Group Realtime</b>
+    
+    ![alt text](https://github.com/pgdiamond123/MyApp/blob/master/screenshot/chatgroup.PNG)
     
     
     
